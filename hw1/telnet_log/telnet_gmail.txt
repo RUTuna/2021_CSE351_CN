@@ -1,0 +1,64 @@
+Last login: Sun Oct 17 00:58:41 on ttys002
+jian@Jian-MacBookPro ~ % nslookup                    
+> set type=mx
+> google.com
+Server:		168.126.63.2
+Address:	168.126.63.2#53
+
+Non-authoritative answer:
+google.com	mail exchanger = 40 alt3.aspmx.l.google.com.
+google.com	mail exchanger = 50 alt4.aspmx.l.google.com.
+google.com	mail exchanger = 30 alt2.aspmx.l.google.com.
+google.com	mail exchanger = 10 aspmx.l.google.com.
+google.com	mail exchanger = 20 alt1.aspmx.l.google.com.
+
+Authoritative answers can be found from:
+google.com	nameserver = ns4.google.com.
+google.com	nameserver = ns1.google.com.
+google.com	nameserver = ns3.google.com.
+google.com	nameserver = ns2.google.com.
+aspmx.l.google.com	internet address = 142.251.8.27
+alt1.aspmx.l.google.com	internet address = 142.250.141.27
+ALT2.aspmx.l.google.com	internet address = 142.250.115.26
+ALT3.aspmx.l.google.com	internet address = 64.233.171.26
+alt4.aspmx.l.google.com	internet address = 142.250.152.26
+ns1.google.com	internet address = 216.239.32.10
+ns2.google.com	internet address = 216.239.34.10
+ns3.google.com	internet address = 216.239.36.10
+ns4.google.com	internet address = 216.239.38.10
+aspmx.l.google.com	has AAAA address 2404:6800:4008:c04::1a
+alt1.aspmx.l.google.com	has AAAA address 2607:f8b0:4023:c0b::1b
+ALT2.aspmx.l.google.com	has AAAA address 2607:f8b0:4023:1004::1b
+ALT3.aspmx.l.google.com	has AAAA address 2607:f8b0:4003:c15::1a
+alt4.aspmx.l.google.com	has AAAA address 2607:f8b0:4001:c56::1a
+> exit
+
+jian@Jian-MacBookPro ~ % telnet aspmx.l.google.com 25
+Trying 74.125.204.27...
+Connected to aspmx.l.google.com.
+Escape character is '^]'.
+220 mx.google.com ESMTP n12si10824388pgf.436 - gsmtp
+helo google.com
+250 mx.google.com at your service
+mail form:<sender@gmail.com>
+555 5.5.2 Syntax error. n12si10824388pgf.436 - gsmtp
+mail from:<sender@gmail.com>
+250 2.1.0 OK n12si10824388pgf.436 - gsmtp
+rcpt to:<p000207jian@gmail.com>
+250 2.1.5 OK n12si10824388pgf.436 - gsmtp
+data
+354  Go ahead n12si10824388pgf.436 - gsmtp
+subject:SMTP Test
+from:Sender
+tp:Jian
+to:Jian
+
+Hello! This is Test for Computer Networking Assignment
+.
+421-4.7.0 [112.185.162.170      15] Our system has detected that this message is
+421-4.7.0 suspicious due to the very low reputation of the sending IP address.
+421-4.7.0 To protect our users from spam, mail sent from your IP address has
+421-4.7.0 been temporarily rate limited. Please visit
+421 4.7.0  https://support.google.com/mail/answer/188131 for more information. n12si10824388pgf.436 - gsmtp
+Connection closed by foreign host.
+jian@Jian-MacBookPro ~ % 

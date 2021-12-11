@@ -1,0 +1,25 @@
+jian@Jian-MacBookPro ~ % telnet localhost 25
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+220 Jian-MacBookPro.local ESMTP Postfix
+helo localhost
+250 Jian-MacBookPro.local
+mail from:<sender@unist.ac.kr>   
+250 2.1.0 Ok
+recp to:<p000207@unist.ac.kr>
+502 5.5.2 Error: command not recognized
+rcpt to:<p000207@unist.ac.kr>
+250 2.1.5 Ok
+data
+354 End data with <CR><LF>.<CR><LF>
+subject: Hello
+from: Sender
+to: Jian
+
+Hello! This is Test for Computer Networking Assignment.
+.
+250 2.0.0 Ok: queued as 23EFA35C25F2
+quit
+221 2.0.0 Bye
+Connection closed by foreign host.
